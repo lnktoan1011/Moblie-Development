@@ -56,6 +56,7 @@ public class activity_menu extends Fragment {
         save_UserId = new ArrayList<>();
         recyclerView = view.findViewById(R.id.recyclerView);
         initView();
+
         //btn cart
         btn_cart = view.findViewById(R.id.btn_cart);
 
@@ -72,7 +73,6 @@ public class activity_menu extends Fragment {
             public void onClick(View v) {
                 Intent intent2 = new Intent(getActivity(), activity_cart_detail.class);
                 intent2.putExtra("result", save_order);
-                //intent2.putExtra("price", sum);
                 startActivityForResult(intent2, 2);
             }
         });
@@ -192,9 +192,7 @@ public class activity_menu extends Fragment {
                         // do whatever
                         Intent intent = new Intent(getActivity(), activity_food_detail_demo.class);
                         intent.putExtra("FoodID", key.get(position));
-                        //startActivity(intent);
                         startActivityForResult(intent,1);
-
                     }
 
                     @Override public void onLongItemClick(View view, int position) {

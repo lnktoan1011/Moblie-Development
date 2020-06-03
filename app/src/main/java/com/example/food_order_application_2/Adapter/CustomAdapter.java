@@ -56,7 +56,6 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView name, price, rate;
-        LinearLayout linearLayout;
         ImageView imageView;
 
         public ViewHolder(@NonNull View itemView) {
@@ -65,8 +64,6 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
             price = itemView.findViewById(R.id.priceProduct);
             imageView = itemView.findViewById(R.id.imageViewFood);
             rate = itemView.findViewById(R.id.tv_rate);
-            //linearLayout = itemView.findViewById(R.id.clickLayout);
-           // btnNumberCount = itemView.findViewById(R.id.number_counter);
         }
     }
 }

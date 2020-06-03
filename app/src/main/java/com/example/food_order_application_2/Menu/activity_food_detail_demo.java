@@ -95,7 +95,7 @@ public class activity_food_detail_demo extends AppCompatActivity {
         foods.child(foodID).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                food food = dataSnapshot.getValue((food.class));
+                food food = dataSnapshot.getValue(food.class);
 
                 Picasso.get().load(food.getImg()).into(food_image);
 

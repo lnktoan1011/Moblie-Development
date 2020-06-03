@@ -38,12 +38,10 @@ public class activity_cart_history extends AppCompatActivity {
     Toolbar toolbar;
     DatabaseReference databaseReference;
 
-
     ArrayList<Order> data;
     ArrayList<FoodHistory> data_cartFood;
     ArrayList<String> id ;
     ArrayList<String> save_UserId;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,8 +50,6 @@ public class activity_cart_history extends AppCompatActivity {
 
         toolbar = findViewById(R.id.toolBar);
         setSupportActionBar(toolbar);
-
-
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Order History");
@@ -69,14 +65,10 @@ public class activity_cart_history extends AppCompatActivity {
         id = new ArrayList<>();
         data_cartFood = new ArrayList<>();
 
-
-
         databaseReference = FirebaseDatabase.getInstance().getReference("Order");
         databaseReference.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-
-
                 //Compare if user is exists
                 if(user_ID.equals(dataSnapshot.child("User ID").getValue().toString())) {
                     String keys = dataSnapshot.getKey();
@@ -93,8 +85,6 @@ public class activity_cart_history extends AppCompatActivity {
                             data_cartFood.add(foodList);
                         }
                     }
-
-                    Log.d("thanhToan", dataSnapshot.getValue().toString());
 
                     if (dataSnapshot.child("Address").getValue() != null) {
                         String address = dataSnapshot.child("Address").getValue().toString();
@@ -132,8 +122,6 @@ public class activity_cart_history extends AppCompatActivity {
 
 
 
-
-
         recyclerView.setLayoutManager(new LinearLayoutManager(activity_cart_history.this, LinearLayoutManager.VERTICAL,false));
         adapter = new custom_adapter_cart_history(activity_cart_history.this, data, id, data_cartFood);
         recyclerView.setAdapter(adapter);
@@ -159,12 +147,9 @@ public class activity_cart_history extends AppCompatActivity {
                                 flag = true;
                             }
                         }
-
                         intent.putExtra("cart_food_detail", data_cartFood_detail);
                         intent.putExtra("order_count", order_count);
                         startActivity(intent);
-                        //startActivityForResult(intent,1);
-
                     }
 
                     @Override public void onLongItemClick(View view, int position) {
@@ -174,8 +159,6 @@ public class activity_cart_history extends AppCompatActivity {
         );
 
     }
-
-
 
 
     //REcyclerview onclick

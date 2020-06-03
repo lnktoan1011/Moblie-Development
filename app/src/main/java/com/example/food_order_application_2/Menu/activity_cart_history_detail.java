@@ -80,7 +80,5 @@ public class activity_cart_history_detail extends AppCompatActivity {
                 false));
         adapter = new custom_adapter_cart_history_detail(activity_cart_history_detail.this, data);
         recyclerView.setAdapter(adapter);
-
-
     }
 }

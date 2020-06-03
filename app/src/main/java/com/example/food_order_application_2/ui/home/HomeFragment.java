@@ -47,7 +47,7 @@ public class HomeFragment extends Fragment {
         btnOrderDiscount = view.findViewById(R.id.btnOrderDiscount);
         btnOrderSell = view.findViewById(R.id.btnOrderSeller);
         btnOrderRecommend = view.findViewById(R.id.btnOrderRecommend);
-        viewFlipper = (ViewFlipper)view.findViewById(R.id.flipper);
+        viewFlipper = view.findViewById(R.id.flipper);
         viewFlipper.setFlipInterval(5000); //5 sec
         viewFlipper.setAutoStart(true);
         flipperImages();
